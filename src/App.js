@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom'
 import Layout from './Components/Layout/Layout'
 import Home from './Components/Home/Home'
 import Products from './Components/Products/Products'
@@ -23,7 +23,7 @@ export default function App() {
 
 let queryClient= new QueryClient()
 
-let routes = createBrowserRouter([
+let routes = createHashRouter([
   {path: "", element:<Layout/>,children:([ 
     {path:"Home", element:<GuardRouting> <Home/></GuardRouting>},
     {path: "Products", element:<GuardRouting><Products/></GuardRouting> },
